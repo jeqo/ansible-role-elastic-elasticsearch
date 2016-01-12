@@ -1,0 +1,31 @@
+---
+#
+
+
+cat > /etc/elasticsearch/logging.yml <<'EOF'
+es.logger.level: INFO
+rootLogger: ${es.logger.level}, console
+logger:
+  action: DEBUG
+  com.amazonaws: WARN
+
+appender:
+  console:
+    type: console
+    layout:
+      type: consolePattern
+      conversionPattern: \"[%d{ISO8601}][%-5p][%-25c] %m%n\"
+EOF
+
+cat > /etc/elasticsearch/elasticsearch.yml <<'EOF'
+cluster.name: elk-fmw
+node.name: elk-fmw-01
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
+network.host: 0.0.0.0
+http.port: 9200
+EOF
+
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service
+sudo /bin/systemctl start elasticsearch.service
