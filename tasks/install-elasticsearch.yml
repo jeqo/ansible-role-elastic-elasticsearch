@@ -1,8 +1,21 @@
 ---
 #
-- group: name=elasticsearch state=present
+- name: prepare elasticsearch group
+  group: name=elasticsearch state=present
 
-- user: name=elasticsearch group=elasticsearch
+- name: prepare elasticsearch user
+  user: name=elasticsearch group=elasticsearch
+
+- name: prepare elasticsearch directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "elasticsearch"
+    group: "elasticsearch"
+  with_items:
+    - "{{ elasticsearch_home }}"
+    - "{{ elasticsearch_data }}"
+    - "{{ elasticsearch_logs }}"
 
 - name: define repo
   template:
