@@ -1,5 +1,8 @@
 ---
 #
+- group: name=elasticsearch state=present
+- user: name=elasticsearch group=elasticsearch
+
 - name: define repo
   template:
     src: elasticsearch-yum.repo.j2
