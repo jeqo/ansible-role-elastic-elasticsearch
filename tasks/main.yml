@@ -3,7 +3,11 @@
 - include: install-elasticsearch.yml
   tags:
     - install
+  become: true
+  become_user: root
 
 - include: configure-elasticsearch.yml
   tags:
-    - configure
+    - configure  
+  become: true
+  become_user: root

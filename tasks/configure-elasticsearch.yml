@@ -2,20 +2,12 @@
 #
 - name: define logging
   template: src=logging.yml.j2 dest=/etc/elasticsearch/logging.yml
-  become: yes
-  become_user: root
 
 - name: define elasticsearch node
   template: src=elasticsearch.yml.j2 dest=/etc/elasticsearch/elasticsearch.yml
-  become: yes
-  become_user: root
 
 - name: reload systemd
   command: systemctl daemon-reload
-  become: yes
-  become_user: root
 
 - name: start and enable elasticsearch service
   service: name=elasticsearch enabled=yes state=started
-  become: yes
-  become_user: root

@@ -1,26 +1,19 @@
 ---
 #
 - group: name=elasticsearch state=present
+
 - user: name=elasticsearch group=elasticsearch
 
 - name: define repo
   template:
     src: elasticsearch-yum.repo.j2
     dest: "/etc/yum.repos.d/elasticsearch-{{ elasticsearch_major }}.x.repo"
-  become: true
-  become_user: root
 
 - name: import elastic key
   rpm_key: state=present key=https://packages.elastic.co/GPG-KEY-elasticsearch
-  become: true
-  become_user: root
 
 - name: install elasticsearch
   yum: name=elasticsearch state=present
-  become: true
-  become_user: root
 
 - name: enable elasticsearch service
   service: name=elasticsearch enabled=yes
-  become: true
-  become_user: root
