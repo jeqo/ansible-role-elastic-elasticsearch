@@ -3,7 +3,7 @@
 - name: define repo
   template:
     src: elasticsearch-yum.repo.j2
-    dest: "/etc/yum.repos.d/elasticsearch-{{ es_major }}.x.repo"
+    dest: "/etc/yum.repos.d/elasticsearch-{{ elasticsearch_major }}.x.repo"
   become: true
   become_user: root
 
