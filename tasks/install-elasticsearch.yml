@@ -17,18 +17,6 @@
   become: true
   become_user: root
 
-- name: prepare elasticsearch directories
-  file:
-    path: "{{ item }}"
-    state: directory
-    owner: "elasticsearch"
-    group: "elasticsearch"
-  with_items:
-    - "{{ elasticsearch_data_path }}"
-    - "{{ elasticsearch_logs_path }}"
-  become: true
-  become_user: elasticseaerch
-
 - name: enable elasticsearch service
   service: name=elasticsearch enabled=yes
   become: true
