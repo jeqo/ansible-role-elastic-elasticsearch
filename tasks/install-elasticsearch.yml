@@ -10,6 +10,3 @@
 
 - name: install elasticsearch
   yum: name=elasticsearch state=present
-
-- name: enable elasticsearch service
-  service: name=elasticsearch enabled=yes
