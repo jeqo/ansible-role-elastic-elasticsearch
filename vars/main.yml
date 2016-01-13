@@ -1,3 +1,5 @@
 ---
 # vars file for elastic-elasticsearch
-es_home: /usr/share/elasticsearch
+elasticsearch_home: /usr/share/elasticsearch
+elasticsearch_data_path: /usr/share/elasticsearch/data
+elasticsearch_logs_path: /usr/share/elasticsearch/logs

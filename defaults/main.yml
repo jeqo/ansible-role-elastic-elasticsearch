@@ -1,3 +1,5 @@
 ---
 # defaults file for elastic-elasticsearch
-es_major: 2.x
+elasticsearch_major: 2
+elasticsearch_cluster_name: #
+elasticsearch_node_name: #

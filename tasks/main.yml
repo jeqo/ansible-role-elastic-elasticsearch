@@ -1,9 +1,9 @@
 ---
 # tasks file for elastic-elasticsearch
-- include: install-es.yml
+- include: install-elasticsearch.yml
   tags:
     - install
 
-- include: configure-es.yml
+- include: configure-elasticsearch.yml
   tags:
     - configure

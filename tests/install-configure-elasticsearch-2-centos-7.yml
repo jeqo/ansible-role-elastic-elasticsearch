@@ -5,3 +5,6 @@
 
   roles:
     - role: elastic-elasticsearch
+      elasticsearch_major: 2
+      elasticsearch_cluster_name: es_cluster
+      elasticsearch_node_name: es_node01
