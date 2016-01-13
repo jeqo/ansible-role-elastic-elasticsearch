@@ -20,8 +20,8 @@
     owner: "elasticsearch"
     group: "elasticsearch"
   with_items:
-    - "{{ es_home }}/data"
-    - "{{ es_home }}/logs"
+    - "{{ elasticsearch_data_path }}"
+    - "{{ elasticsearch_logs_path }}"
 
 - name: enable elasticsearch service
   service: name=elasticsearch enabled=yes
