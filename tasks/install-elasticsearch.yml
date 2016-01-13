@@ -9,9 +9,13 @@
 
 - name: import elastic key
   rpm_key: state=present key=https://packages.elastic.co/GPG-KEY-elasticsearch
+  become: true
+  become_user: root
 
 - name: install elasticsearch
   yum: name=elasticsearch state=present
+  become: true
+  become_user: root
 
 - name: prepare elasticsearch directories
   file:
@@ -25,3 +29,5 @@
 
 - name: enable elasticsearch service
   service: name=elasticsearch enabled=yes
+  become: true
+  become_user: root
