@@ -3,3 +3,5 @@
 elasticsearch_major: 2
 elasticsearch_cluster_name: #
 elasticsearch_node_name: #
+elasticsearch_ip: 0.0.0.0 #elk-fmw01
+elasticsearch_port: 9200 #9200
