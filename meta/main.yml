@@ -114,4 +114,6 @@ galaxy_info:
   - database
   - database:nosql
 dependencies:
-  - { role: jeqo.java, java_version: 8 }
+  -
+    role: jeqo.java
+    java_version: 8
