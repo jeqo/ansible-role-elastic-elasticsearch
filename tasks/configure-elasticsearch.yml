@@ -23,8 +23,8 @@
 - name: define elasticsearch node
   template: src=elasticsearch.yml.j2 dest=/etc/elasticsearch/elasticsearch.yml
 
-# - name: reload systemd
-#   command: systemctl daemon-reload
+- name: reload systemd
+  command: systemctl daemon-reload
 
 - name: start and enable elasticsearch service
   service: name=elasticsearch enabled=yes state=started
