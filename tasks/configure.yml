@@ -6,6 +6,7 @@
     state: directory
     owner: "elasticsearch"
     group: "elasticsearch"
+    recurse: yes
   with_items:
     - "{{ elasticsearch_home }}"
     - "{{ elasticsearch_data }}"
