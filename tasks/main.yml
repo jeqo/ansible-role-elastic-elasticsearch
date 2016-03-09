@@ -3,7 +3,7 @@
 - include: prepare.yml
   become: true
 
-- include: install-{{ ansible_os_family }}.yml
+- include: "install-{{ ansible_os_family }}.yml"
   become: true
 
 - include: configure.yml
