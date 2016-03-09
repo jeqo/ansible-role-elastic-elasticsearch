@@ -1,5 +1,16 @@
 ---
 #
+- name: prepare elasticsearch directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "elasticsearch"
+    group: "elasticsearch"
+  with_items:
+    - "{{ elasticsearch_home }}"
+    - "{{ elasticsearch_data }}"
+    - "{{ elasticsearch_logs }}"
+
 - name: define logging
   template:
     src: logging.yml.j2

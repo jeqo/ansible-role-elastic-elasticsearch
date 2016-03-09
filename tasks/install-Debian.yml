@@ -10,4 +10,4 @@
 
 - apt:
     name: elasticsearch
-    update_cache: yes
+    state: present

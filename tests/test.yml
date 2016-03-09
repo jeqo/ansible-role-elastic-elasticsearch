@@ -10,7 +10,7 @@
       elasticsearch_node_name: es_node01
 
 - name: test install and configure elasticsearch on ubuntu 14
-  hosts: test01
+  hosts: test02
 
   roles:
     - role: elastic-elasticsearch
