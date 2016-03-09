@@ -1,0 +1,13 @@
+# wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+- apt_key:
+    url: https://packages.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- apt_repository:
+    repo: 'deb http://packages.elastic.co/elasticsearch/{{ elasticsearch_major }}.x/debian stable main'
+    state: present
+
+- apt:
+    name: elasticsearch
+    update_cache: yes

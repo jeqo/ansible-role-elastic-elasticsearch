@@ -2,7 +2,6 @@
 galaxy_info:
   author: jeqo
   description: install and configure elasticsearch
-  company: sysco as
   license: MIT
   min_ansible_version: 1.2
   platforms:
@@ -111,9 +110,7 @@ galaxy_info:
   # the platforms above, uncomment those that apply to your role.
   #
   categories:
-  - database
-  - database:nosql
-dependencies:
-  -
-    role: jeqo.java
-    java_version: 8
+    - database
+    - database:nosql
+    - search
+dependencies: []

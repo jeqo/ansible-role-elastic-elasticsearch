@@ -1,7 +1,16 @@
 ---
 #
-- name: test install and configure elasticsearch
-  hosts: 127.0.0.1
+- name: test install and configure elasticsearch on centos 7
+  hosts: test01
+
+  roles:
+    - role: elastic-elasticsearch
+      elasticsearch_major: 2
+      elasticsearch_cluster_name: es_cluster
+      elasticsearch_node_name: es_node01
+
+- name: test install and configure elasticsearch on ubuntu 14
+  hosts: test01
 
   roles:
     - role: elastic-elasticsearch

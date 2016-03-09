@@ -1,13 +1,10 @@
 ---
 # tasks file for elastic-elasticsearch
-- include: install-elasticsearch.yml
-  tags:
-    - install
+- include: prepare.yml
   become: true
-  become_user: root
 
-- include: configure-elasticsearch.yml
-  tags:
-    - configure  
+- include: install-{{ ansible_os_family }}.yml
   become: true
-  become_user: root
+
+- include: configure.yml
+  become: true
