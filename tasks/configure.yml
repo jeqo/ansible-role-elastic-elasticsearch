@@ -15,4 +15,4 @@
     name: elasticsearch
     enabled: yes
     state: started
-  ignore_fail: yes
+  ignore_errors: yes
