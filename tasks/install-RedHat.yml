@@ -6,7 +6,11 @@
     dest: "/etc/yum.repos.d/elasticsearch-{{ elasticsearch_major }}.x.repo"
 
 - name: import elastic key
-  rpm_key: state=present key=https://packages.elastic.co/GPG-KEY-elasticsearch
+  rpm_key:
+    key: https://packages.elastic.co/GPG-KEY-elasticsearch
+    state: present
 
 - name: install elasticsearch
-  yum: name=elasticsearch state=present
+  yum:
+    name: elasticsearch
+    state: present
