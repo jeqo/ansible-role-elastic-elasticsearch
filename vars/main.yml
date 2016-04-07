@@ -1,5 +1,6 @@
 ---
 # vars file for elastic-elasticsearch
 elasticsearch_home: /usr/share/elasticsearch
-elasticsearch_data: /usr/share/elasticsearch/data
-elasticsearch_logs: /usr/share/elasticsearch/logs
+elasticsearch_data: "{{ elasticsearch_home }}/data"
+elasticsearch_logs: "{{ elasticsearch_home }}/logs"
+elasticsearch_config: "{{ elasticsearch_home }}/config"
